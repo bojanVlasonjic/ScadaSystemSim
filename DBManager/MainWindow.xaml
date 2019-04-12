@@ -1,0 +1,88 @@
+﻿<Window x:Class="DBManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBManager"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="678.525" Width="1098.025">
+    <Grid x:Name="MainGrid" HorizontalAlignment="Left" Width="636" Margin="0,0,0,4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="87*"/>
+            <ColumnDefinition Width="125*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="TagsGrid" HorizontalAlignment="Left" Width="400" Grid.ColumnSpan="2" Margin="10,2,0,-2">
+            <Button x:Name="addTagBtn" Content="add Tag" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Width="74" Click="addTagBtn_Click" Height="20"/>
+            <Button x:Name="removeTagBtn" Content="remove tag" HorizontalAlignment="Left" Margin="216,17,0,0" VerticalAlignment="Top" Width="76" Click="removeTagBtn_Click" Height="20"/>
+            <Button x:Name="editTagBtn" Content="edit tag" HorizontalAlignment="Left" Margin="116,17,0,0" VerticalAlignment="Top" Width="74" Click="editTagBtn_Click" Height="20"/>
+            <TextBox x:Name="tagNameTextBox" HorizontalAlignment="Left" Height="22" Margin="134,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+            <Label x:Name="tagNameLabel" Content="Tag name: " HorizontalAlignment="Left" Margin="35,118,0,0" VerticalAlignment="Top" Height="26" Width="67"/>
+            <Label x:Name="tagDescrLabel" Content="Tag description:" HorizontalAlignment="Left" Margin="35,149,0,0" VerticalAlignment="Top" Height="26" Width="93"/>
+            <TextBox x:Name="tagDescrTextBox" HorizontalAlignment="Left" Height="22" Margin="134,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+            <Label x:Name="tagDriverLabel" Content="Driver: " HorizontalAlignment="Left" Margin="36,180,0,0" VerticalAlignment="Top" Height="26" Width="48"/>
+            <ComboBox x:Name="tagDriverComboBox" HorizontalAlignment="Left" Margin="134,180,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="tagDriverComboBox_SelectionChanged" Grid.ColumnSpan="2" Height="22">
+                <ComboBoxItem x:Name="realTimeDriver" Content="Real time driver" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem x:Name="simulationDriver" Content="Simulation driver" HorizontalAlignment="Left" Width="118"/>
+            </ComboBox>
+            <Label x:Name="tagAddressLabel" Content="Address: " HorizontalAlignment="Left" Margin="36,211,0,0" VerticalAlignment="Top" Height="26" Width="58"/>
+            <ComboBox x:Name="tagAddressComboBox" HorizontalAlignment="Left" Margin="134,211,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="tagAddressComboBox_SelectionChanged" Grid.ColumnSpan="2" Height="22"/>
+            <Label x:Name="tagTypeLabel" Content="Tag type: " HorizontalAlignment="Left" Margin="36,87,0,0" VerticalAlignment="Top" Height="26" Width="60"/>
+            <ComboBox x:Name="tagTypeComboBox" HorizontalAlignment="Left" Margin="134,91,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="tagTypeComboBox_SelectionChanged" Grid.ColumnSpan="2" Height="22">
+                <ComboBoxItem x:Name="digitalInput" Content="Digital input" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem x:Name="digitalOutput" Content="Digital output" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem x:Name="analogInput" Content="Analog input" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem x:Name="analogOutput" Content="Analog output" HorizontalAlignment="Left" Width="118"/>
+            </ComboBox>
+            <Label x:Name="scanTimeLabel" Content="Scan time:" HorizontalAlignment="Left" Margin="36,242,0,0" VerticalAlignment="Top" Height="26" Width="64"/>
+            <Label x:Name="initValueLabel" Content="Initial value: " HorizontalAlignment="Left" Margin="36,273,0,0" VerticalAlignment="Top" Height="26" Width="76"/>
+            <Label x:Name="scanLabel" Content="Scan:" HorizontalAlignment="Left" Margin="38,304,0,0" VerticalAlignment="Top" Height="26" Width="37"/>
+            <ComboBox x:Name="tagScanComboBox" HorizontalAlignment="Left" Margin="134,308,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="tagScanComboBox_SelectionChanged" Height="22">
+                <ComboBoxItem x:Name="ScanOn" Content="ON" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem x:Name="ScanOff" Content="OFF" HorizontalAlignment="Left" Width="118"/>
+            </ComboBox>
+            <ComboBox x:Name="tagReadDataTypeComboBox" HorizontalAlignment="Left" Margin="134,339,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="tagReadDataTypeComboBox_SelectionChanged" Height="22">
+                <ComboBoxItem x:Name="tagAutoRead" Content="Auto" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem x:Name="tagManualRead" Content="Manual" HorizontalAlignment="Left" Width="118"/>
+            </ComboBox>
+            <Label x:Name="readTypeLabel" Content="Read data type:" HorizontalAlignment="Left" Margin="35,335,0,0" VerticalAlignment="Top" Height="26" Width="92"/>
+            <Label x:Name="lowLimitLabel" Content="Low limit:" HorizontalAlignment="Left" Margin="38,366,0,0" VerticalAlignment="Top" Height="26" Width="60"/>
+            <Label x:Name="highLimitLabel" Content="High limit:" HorizontalAlignment="Left" Margin="38,397,0,0" VerticalAlignment="Top" Height="26" Width="64"/>
+            <Label x:Name="unitsLabel" Content="Units:" HorizontalAlignment="Left" Margin="38,428,0,0" VerticalAlignment="Top" Height="26" Width="40"/>
+            <TextBox x:Name="tagScanTimeTextBox" HorizontalAlignment="Left" Height="23" Margin="134,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="tagInitValueTextBox" HorizontalAlignment="Left" Height="23" Margin="134,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="tagHighLimitTextBox" HorizontalAlignment="Left" Height="23" Margin="134,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="tagLowLimitTextBox" HorizontalAlignment="Left" Height="23" Margin="134,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="tagUnitsTextBox" HorizontalAlignment="Left" Height="23" Margin="134,431,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+
+        </Grid>
+
+        <Grid x:Name="AlarmsGird" HorizontalAlignment="Right" Margin="0,-16,0,202">
+            <Button x:Name="addAlarmBtn" Content="Add alarm" HorizontalAlignment="Left" Margin="402,27,-216,0" VerticalAlignment="Top" Width="75" Click="addAlarmBtn_Click" Height="20"/>
+            <Button x:Name="removeAlarmBtn" Content="Remove alarm" HorizontalAlignment="Left" Margin="503,27,-322,0" VerticalAlignment="Top" Width="80" Click="removeAlarmBtn_Click" Height="20"/>
+            <Label x:Name="alarmLowLimitLabel" Content="Low limit:" HorizontalAlignment="Left" Margin="336,140,-135,0" VerticalAlignment="Top" Height="26" Width="60"/>
+            <Label x:Name="alarmHighLimitLabel" Content="High Limit: " HorizontalAlignment="Left" Margin="336,174,-145,0" VerticalAlignment="Top" Height="26" Width="70"/>
+            <TextBox x:Name="alarmLowLimitTxtBox" HorizontalAlignment="Left" Height="23" Margin="412,143,-271,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="alarmHighLimitTxtBox" HorizontalAlignment="Left" Height="23" Margin="412,177,-271,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="alarmTagNameTxtBox" HorizontalAlignment="Left" Height="22" Margin="412,212,-271,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="tagNameLabel_alarm" Content="Tag name: " HorizontalAlignment="Left" Margin="336,208,-142,0" VerticalAlignment="Top" Height="26" Width="67"/>
+        </Grid>
+
+        <Label x:Name="label3" Content="Send data manually" HorizontalAlignment="Left" Margin="98,495,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.788,-0.173"/>
+        <Label x:Name="label4" Content="Tag ID: " HorizontalAlignment="Left" Margin="59,535,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Content="Value: " HorizontalAlignment="Left" Margin="59,570,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="manualValueTxtBox" HorizontalAlignment="Left" Height="23" Margin="113,570,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <Button x:Name="sendManualBtn" Content="Send Data" Margin="112,605,83,0" VerticalAlignment="Top" Click="sendManualBtn_Click"/>
+        <TextBox x:Name="manualTagIDTxtBox" HorizontalAlignment="Left" Height="23" Margin="113,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"/>
+
+        <Label x:Name="allTagsLabel" Content="All tags:" HorizontalAlignment="Left" Margin="536,25,-213,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="52"/>
+        <TextBox x:Name="allTagsTextBox" HorizontalAlignment="Left" Height="536" Margin="419,57,-389,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" Grid.Column="1"/>
+        <Label x:Name="label" Content="All alarms:" HorizontalAlignment="Left" Margin="100,280,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="64"/>
+        <TextBox x:Name="allAlarmsTextBox" HorizontalAlignment="Left" Height="287" Margin="100,306,-4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+        <Label x:Name="label1" Content="New tag form" HorizontalAlignment="Left" Margin="112,57,0,0" VerticalAlignment="Top" Width="94" Height="26"/>
+        <Label x:Name="label2" Content="New alarm form" Grid.Column="1" HorizontalAlignment="Left" Margin="140,66,0,0" VerticalAlignment="Top" Height="26" Width="95"/>
+        <Label x:Name="alarmIDLabel" Content="Alarm id: " Grid.Column="1" HorizontalAlignment="Left" Margin="74,97,0,0" VerticalAlignment="Top" Height="26" Width="60"/>
+        <TextBox x:Name="alarmIDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="149,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="viewAlarmsBtn" Content="View alarms" Grid.Column="1" HorizontalAlignment="Left" Margin="290,194,0,0" VerticalAlignment="Top" Width="75" Click="viewAlarmsBtn_Click" Height="20"/>
+
+    </Grid>
+</Window>

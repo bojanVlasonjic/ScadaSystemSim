@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScadaCore", "Service\ScadaCore.csproj", "{7A41AECE-998E-480F-AF15-074F99C49AFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Real-Time-Unit", "Real-Time-Unit\Real-Time-Unit.csproj", "{84B4C591-8411-495B-ABF7-1E0C2EBB0CEE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7A41AECE-998E-480F-AF15-074F99C49AFF} = {7A41AECE-998E-480F-AF15-074F99C49AFF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBManager", "DBManager\DBManager.csproj", "{8A7F06AA-C570-4E7A-9302-FC97E2AECAA7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7A41AECE-998E-480F-AF15-074F99C49AFF} = {7A41AECE-998E-480F-AF15-074F99C49AFF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScadaModel", "ScadaModel\ScadaModel.csproj", "{DA026A9A-B6B8-4888-BC1D-225D5AA0D884}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trending", "Trending\Trending.csproj", "{6D773C5F-9BC8-4D1A-9E3B-664303C5A67A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7A41AECE-998E-480F-AF15-074F99C49AFF} = {7A41AECE-998E-480F-AF15-074F99C49AFF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmDisplay", "AlarmDisplay\AlarmDisplay.csproj", "{C057EA18-9A0E-4961-BB68-A0B6F48979F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7A41AECE-998E-480F-AF15-074F99C49AFF} = {7A41AECE-998E-480F-AF15-074F99C49AFF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A41AECE-998E-480F-AF15-074F99C49AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A41AECE-998E-480F-AF15-074F99C49AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A41AECE-998E-480F-AF15-074F99C49AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A41AECE-998E-480F-AF15-074F99C49AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84B4C591-8411-495B-ABF7-1E0C2EBB0CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84B4C591-8411-495B-ABF7-1E0C2EBB0CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84B4C591-8411-495B-ABF7-1E0C2EBB0CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84B4C591-8411-495B-ABF7-1E0C2EBB0CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7F06AA-C570-4E7A-9302-FC97E2AECAA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A7F06AA-C570-4E7A-9302-FC97E2AECAA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A7F06AA-C570-4E7A-9302-FC97E2AECAA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A7F06AA-C570-4E7A-9302-FC97E2AECAA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA026A9A-B6B8-4888-BC1D-225D5AA0D884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA026A9A-B6B8-4888-BC1D-225D5AA0D884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA026A9A-B6B8-4888-BC1D-225D5AA0D884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA026A9A-B6B8-4888-BC1D-225D5AA0D884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D773C5F-9BC8-4D1A-9E3B-664303C5A67A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D773C5F-9BC8-4D1A-9E3B-664303C5A67A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D773C5F-9BC8-4D1A-9E3B-664303C5A67A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D773C5F-9BC8-4D1A-9E3B-664303C5A67A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C057EA18-9A0E-4961-BB68-A0B6F48979F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C057EA18-9A0E-4961-BB68-A0B6F48979F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C057EA18-9A0E-4961-BB68-A0B6F48979F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C057EA18-9A0E-4961-BB68-A0B6F48979F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
